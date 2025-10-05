@@ -328,6 +328,8 @@ export default function TemplateDesigner({ template, onSave }: TemplateDesignerP
                   <option value="Tangerine">Tangerine</option>
                 </optgroup>
                 <optgroup label="Google Fonts - Tamil">
+                  <option value="Noto Sans Tamil">Noto Sans Tamil</option>
+                  <option value="Noto Serif Tamil">Noto Serif Tamil</option>
                   <option value="Hind Madurai">Hind Madurai</option>
                   <option value="Mukta Malar">Mukta Malar</option>
                   <option value="Catamaran">Catamaran</option>
