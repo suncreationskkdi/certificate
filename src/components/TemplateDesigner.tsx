@@ -299,17 +299,33 @@ export default function TemplateDesigner({ template, onSave }: TemplateDesignerP
                   <option value="Courier New">Courier New</option>
                   <option value="Verdana">Verdana</option>
                 </optgroup>
-                <optgroup label="Google Fonts">
+                <optgroup label="Google Fonts - Serif">
                   <option value="Playfair Display">Playfair Display</option>
+                  <option value="Merriweather">Merriweather</option>
+                  <option value="Cinzel">Cinzel</option>
+                  <option value="Cormorant">Cormorant</option>
+                  <option value="Crimson Text">Crimson Text</option>
+                  <option value="Libre Baskerville">Libre Baskerville</option>
+                </optgroup>
+                <optgroup label="Google Fonts - Sans Serif">
                   <option value="Montserrat">Montserrat</option>
                   <option value="Roboto">Roboto</option>
                   <option value="Open Sans">Open Sans</option>
                   <option value="Lato">Lato</option>
                   <option value="Poppins">Poppins</option>
-                  <option value="Merriweather">Merriweather</option>
+                  <option value="Raleway">Raleway</option>
+                  <option value="Oswald">Oswald</option>
+                </optgroup>
+                <optgroup label="Google Fonts - Display">
+                  <option value="Abril Fatface">Abril Fatface</option>
+                  <option value="Bebas Neue">Bebas Neue</option>
+                </optgroup>
+                <optgroup label="Google Fonts - Script">
                   <option value="Dancing Script">Dancing Script</option>
                   <option value="Great Vibes">Great Vibes</option>
                   <option value="Pacifico">Pacifico</option>
+                  <option value="Satisfy">Satisfy</option>
+                  <option value="Tangerine">Tangerine</option>
                 </optgroup>
               </select>
             </div>

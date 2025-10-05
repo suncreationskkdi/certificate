@@ -91,7 +91,7 @@ export default function CertificateGenerator({ template, data }: CertificateGene
     tempDiv.appendChild(tempCertificate);
 
     const canvas = await html2canvas(tempCertificate, {
-      scale: 1,
+      scale: 2,
       useCORS: true,
       logging: false,
       backgroundColor: '#ffffff'
@@ -103,7 +103,7 @@ export default function CertificateGenerator({ template, data }: CertificateGene
 
   const generatePdf = async (index: number) => {
     const canvas = await captureCanvas(index);
-    const imgData = canvas.toDataURL('image/jpeg', 0.8);
+    const imgData = canvas.toDataURL('image/jpeg', 0.7);
 
     const pdf = new jsPDF({
       orientation: template.width > template.height ? 'landscape' : 'portrait',
@@ -112,7 +112,7 @@ export default function CertificateGenerator({ template, data }: CertificateGene
       compress: true
     });
 
-    pdf.addImage(imgData, 'JPEG', 0, 0, template.width, template.height, undefined, 'MEDIUM');
+    pdf.addImage(imgData, 'JPEG', 0, 0, template.width, template.height, undefined, 'FAST');
     pdf.save(`certificate_${data[index].name || index + 1}.pdf`);
   };
 
@@ -128,7 +128,7 @@ export default function CertificateGenerator({ template, data }: CertificateGene
         a.click();
         URL.revokeObjectURL(url);
       }
-    }, 'image/jpeg', 0.85);
+    }, 'image/jpeg', 0.8);
   };
 
   const generateAllPdf = async () => {
@@ -143,13 +143,13 @@ export default function CertificateGenerator({ template, data }: CertificateGene
 
     for (let i = 0; i < data.length; i++) {
       const canvas = await captureCanvas(i);
-      const imgData = canvas.toDataURL('image/jpeg', 0.8);
+      const imgData = canvas.toDataURL('image/jpeg', 0.7);
 
       if (i > 0) {
         pdf.addPage([template.width, template.height]);
       }
 
-      pdf.addImage(imgData, 'JPEG', 0, 0, template.width, template.height, undefined, 'MEDIUM');
+      pdf.addImage(imgData, 'JPEG', 0, 0, template.width, template.height, undefined, 'FAST');
       await new Promise(resolve => setTimeout(resolve, 100));
     }
 
@@ -170,7 +170,7 @@ export default function CertificateGenerator({ template, data }: CertificateGene
       const blob = await new Promise<Blob>((resolve) => {
         canvas.toBlob((b) => {
           if (b) resolve(b);
-        }, 'image/jpeg', 0.85);
+        }, 'image/jpeg', 0.8);
       });
 
       const fileName = `certificate_${data[i].name || i + 1}.jpg`.replace(/[^a-z0-9_\-\.]/gi, '_');
