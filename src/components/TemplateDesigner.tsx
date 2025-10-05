@@ -327,6 +327,14 @@ export default function TemplateDesigner({ template, onSave }: TemplateDesignerP
                   <option value="Satisfy">Satisfy</option>
                   <option value="Tangerine">Tangerine</option>
                 </optgroup>
+                <optgroup label="Google Fonts - Tamil">
+                  <option value="Hind Madurai">Hind Madurai</option>
+                  <option value="Mukta Malar">Mukta Malar</option>
+                  <option value="Catamaran">Catamaran</option>
+                  <option value="Pavanam">Pavanam</option>
+                  <option value="Baloo Thambi 2">Baloo Thambi 2</option>
+                  <option value="Karla">Karla</option>
+                </optgroup>
               </select>
             </div>
 
